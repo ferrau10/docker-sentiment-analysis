@@ -1,0 +1,4 @@
+slackclient == 2.9.0
+requests == 2.24.0
+pandas 
+pymongo 
