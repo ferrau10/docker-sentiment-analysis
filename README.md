@@ -1,2 +1,2 @@
 # docker-sentiment-analysis
-![visualization](./data_pipline.png)
+![visualization](./data_pipeline.png)
