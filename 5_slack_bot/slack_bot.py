@@ -1,13 +1,10 @@
 import os
+import logging
+from sqlalchemy import create_engine
+import time
 from slack import RTMClient
 from slack.errors import SlackApiError
-from sqlalchemy import create_engine
-import logging
-from sqlalchemy import inspect
-import time
 
-
-print('blabla')
 
 oauth_token = "xoxb-1263169162151-1382329023637-RtdTCS32CCd7OrXOxIhO8AbE"
 
@@ -27,7 +24,6 @@ NEGATIVE_RANDOM_QUERY = '''SELECT * FROM slacks where sentiment_score < 0.01 ORD
 
 if len(engine.table_names()) == 0: 
     time.sleep(5)
-    print('ok')
 
 with engine.connect() as connection:
     result_positive = connection.execute(POSITIVE_RANDOM_QUERY)
@@ -37,6 +33,7 @@ with engine.connect() as connection:
     result_negative = connection.execute(NEGATIVE_RANDOM_QUERY)
     for row in result_negative:
         text_negative = row['text']
+
 
 
 @RTMClient.run_on(event='message')
