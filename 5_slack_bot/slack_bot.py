@@ -5,8 +5,8 @@ import time
 from slack import RTMClient
 from slack.errors import SlackApiError
 
-
-oauth_token = "xoxb-1263169162151-1382329023637-RtdTCS32CCd7OrXOxIhO8AbE"
+oauth_token =  'xoxb-1263169162151-1568563158727-vh8bMN7zZkPdD1XVbFkXzVyE'
+#oauth_token = "xoxb-1263169162151-1382329023637-RtdTCS32CCd7OrXOxIhO8AbE"
 
 # Connect to the Postgres database
 HOST = 'mypg'
