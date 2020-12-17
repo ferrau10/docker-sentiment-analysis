@@ -25,10 +25,9 @@ from sqlalchemy import create_engine
 
 
 # Connect to the MongoDB database
-mongo_client = MongoClient(host='mymongo', port=27017)
-mongodb = mongo_client.slack_pipeline
-slack_collection = mongodb.slackspiced
-
+mongo_client = MongoClient(host='mongodb', port=27017)
+mongo_db = mongo_client.slack_pipeline
+slack_collection = mongo_db.slacks
 
 # Connect to the Postgres database
 HOST = 'mypg'
@@ -41,9 +40,9 @@ engine = create_engine(f'postgres://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DB}')
 
 
 # Create table slack in the Postgres database
-CREATE_QUERY = ''' CREATE TABLE IF NOT EXISTS slacks
-                   (text TEXT,
-                   sentiment_score NUMERIC);'''
+CREATE_QUERY = '''CREATE TABLE IF NOT EXISTS slacks
+                (text TEXT,
+                sentiment_score NUMERIC);'''
 
 engine.execute(CREATE_QUERY)
 

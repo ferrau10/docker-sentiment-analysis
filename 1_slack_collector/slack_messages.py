@@ -7,9 +7,9 @@ from pymongo import MongoClient
 import json 
 
 # Create a connection to MongoDB
-mongo_client = MongoClient(host='mymongo', port=27017) # host = name of mongodb container, port = port of container
-mongodb = mongo_client.slack_pipeline
-slack_collection = mongodb.slack
+mongo_client = MongoClient(host='mongodb', port=27017) 
+mongo_db = mongo_client.slack_pipeline
+slack_collection = mongo_db.slacks
 
 
 oauth_token = "xoxb-1263169162151-1382566512052-kcahC5NqnSNzYAbhRCnvh0fF"
@@ -76,4 +76,4 @@ with open('data_hands_on_agile_general.json') as json_file:
 
 #load data 
 for i in range(len(data)):
-    mongodb.slackspiced.insert(data[i])
+    slack_collection.insert(data[i])

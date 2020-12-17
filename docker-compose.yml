@@ -1,31 +1,28 @@
 version: '3'
 
-#everything that follows after services is a separate container 
 services:
 
   # 1. Container: Collects question and threads from slack
   slack_collector:
-    build: slack_collector/
-    #makes sure the mongodb container is created before the slack_collector container
+    build: 1_slack_collector/
     volumes:
-    - ./slack_collector/:/app 
+    - ./1_slack_collector/:/app 
     depends_on:
-    - mymongo
+    - mongodb
 
   # 2. Container: Stores the raw data from slack
-  mymongo:
+  mongodb:
     image: mongo
-    container_name: mongodb_slack
     ports:
-      - 55555:27017
+      - 27017:27017
     
   # 3. Container: ETL job
   etl_job:
-    build: etl_job/
+    build: 3_etl_job/
     volumes:
-      - ./etl_job/:/app
+      - ./3_etl_job/:/app
     depends_on:
-      - mymongo
+      - mongodb
       - mypg
 
   # 4. Container: Postgres database server
@@ -39,9 +36,10 @@ services:
 
   # 5. Container: Slack bot
   slack_bot:
-    build: slack_bot/
+    build: 5_slack_bot/
     volumes:
-      - ./slack_bot/:/app
+      - ./5_slack_bot/:/app
     depends_on:
       - mypg
+
     
