@@ -10,7 +10,7 @@ This was done by building a data pipeline, consisting of 5 different docker cont
 4) A Postgres db to hold the analysed data
 5) The second chat bot which listens to messages and answers users on certain prompts
 
-![visualization](./data_pipeline.png)
+![visualization](./images/data_pipeline.png)
 
 ### Usage 
 The usage is complicated because you will need to create 1 or 2 slack apps. Make sure you have Docker installed.
