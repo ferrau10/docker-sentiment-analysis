@@ -2,7 +2,7 @@
 
 People speak online, and in the Agile community, we help each other a lot on slack channels. I wanted to analyse the positivity or negativity of posts in the general slack channel of different agile slack workplaces by assigning them sentiment scores. 
 Then, I build a slack bot that is able to listen to all messages posted in the channels it has access to, and answers when someone says hi (it’s a polite chatbot of course!) and when someone wants to hear something positive or negative that has been said in the online agile community.
-
+![visualization](./images/data_pipeline.png)
 This was done by building a data pipeline, consisting of 5 different docker containers:
 1) The first slack bot to collect data
 2) A Mongodb to host the raw data
@@ -10,7 +10,7 @@ This was done by building a data pipeline, consisting of 5 different docker cont
 4) A Postgres db to hold the analysed data
 5) The second chat bot which listens to messages and answers users on certain prompts
 
-![visualization](./images/data_pipeline.png)
+![visualization](./images/hi.png) 
 
 ### Usage 
 The usage is complicated because you will need to create 1 or 2 slack apps. Make sure you have Docker installed.
@@ -49,7 +49,6 @@ Time to run it!
 
 You should now be able to interact with a slack bot in the channel you chose in step 4. Type in ‘Hello’, or ‘say something positive’, and check out the answer of your bot! 
 
-![visualization](./images/hi.png) 
 ![visualization](./images/answer.png)
 
 Note: this is a demo project, so I deliberately chose to keep the password of the db so you can have a look into it even if you do not install the slack apps. Just ignore step 3 and 4 and access the databases from your terminal (docker exec -it mongodb mongo / docker exec -it ps_name bash) 
