@@ -12,8 +12,7 @@ mongo_db = mongo_client.slack_pipeline
 slack_collection = mongo_db.slacks
 
 # your own oath token here: 
-#oauth_token = "xoxb-1263169162151-1382566512052-kcahC5NqnSNzYAbhRCnvh0fF"
-oauth_token = 'xoxb-1263169162151-1576550306902-wRTvspn46vyosGQinFtqlwwQ' 
+oauth_token = "xoxb-1263169162151-1382566512052-kcahC5NqnSNzYAbhRCnvh0fF"
 
 # this is the channel ID for all general channels of slack workplaces 
 channel = 'C0184AAGVRD'

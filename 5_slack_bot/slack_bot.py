@@ -5,8 +5,7 @@ import time
 from slack import RTMClient
 from slack.errors import SlackApiError
 
-oauth_token =  'xoxb-1263169162151-1568563158727-vh8bMN7zZkPdD1XVbFkXzVyE'
-#oauth_token = "xoxb-1263169162151-1382329023637-RtdTCS32CCd7OrXOxIhO8AbE"
+oauth_token = "xoxb-1263169162151-1382329023637-RtdTCS32CCd7OrXOxIhO8AbE"
 
 # Connect to the Postgres database
 HOST = 'mypg'
@@ -21,7 +20,7 @@ POSITIVE_RANDOM_QUERY = '''SELECT * FROM slacks where sentiment_score > 0.99 ORD
                 
 NEGATIVE_RANDOM_QUERY = '''SELECT * FROM slacks where sentiment_score < 0.01 ORDER BY RANDOM() LIMIT 1;'''
 
-
+# gives the time for the etl job to be done 
 if len(engine.table_names()) == 0: 
     time.sleep(5)
 
