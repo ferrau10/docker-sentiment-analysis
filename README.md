@@ -49,6 +49,7 @@ Time to run it!
 
 You should now be able to interact with a slack bot in the channel you chose in step 4. Type in ‘Hello’, or ‘say something positive’, and check out the answer of your bot! 
 
+![visualization](./images/hi.png) ![visualization](./images/data_pipeline.png)
 
 Note: this is a demo project, so I deliberately chose to keep the password of the db so you can have a look into it even if you do not install the slack apps. Just ignore step 3 and 4 and access the databases from your terminal (docker exec -it mongodb mongo / docker exec -it ps_name bash) 
 And regarding the oath tokens, they do not need to be hidden because you would need access to the slack channels and ask for the admins’ approval to install the app on their slack. 
