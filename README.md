@@ -2,7 +2,10 @@
 
 People speak online, and in the Agile community, we help each other a lot on slack channels. I wanted to analyse the positivity or negativity of posts in the general slack channel of different agile slack workplaces by assigning them sentiment scores. 
 Then, I build a slack bot that is able to listen to all messages posted in the channels it has access to, and answers when someone says hi (it’s a polite chatbot of course!) and when someone wants to hear something positive or negative that has been said in the online agile community.
+
 ![visualization](./images/data_pipeline.png)
+
+
 This was done by building a data pipeline, consisting of 5 different docker containers:
 1) The first slack bot to collect data
 2) A Mongodb to host the raw data
