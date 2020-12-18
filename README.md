@@ -19,8 +19,8 @@ This was done by building a data pipeline, consisting of 5 different docker cont
 The usage is complicated because you will need to create 1 or 2 slack apps. Make sure you have [Docker](https://docs.docker.com/get-docker/) installed.
 
 #### Step 1
-Create a virtual environement with python 3.8 (optional): conda create -n py38 python=3.8 
-Activate the virtual environment (optional): conda activate py38
+Create a virtual environement with python 3.8 (optional): `conda create -n py38 python=3.8`
+Activate the virtual environment (optional): `conda activate py38`
 
 #### Step 2
 Clone the repository
@@ -47,8 +47,8 @@ DO NOT UPDATE THE SCOPES!
 
 #### Step 5
 Time to run it! 
-- In your terminal, run: docker-compose build 
-- docker-compose up 
+- In your terminal, run: `docker-compose build` 
+- `docker-compose up`
 
 You should now be able to interact with a slack bot in the channel you chose in step 4. Type in ‘Hello’, or ‘say something positive’, and check out the answer of your bot! 
 
